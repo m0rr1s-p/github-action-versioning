@@ -18,5 +18,8 @@ jobs:
           pip install -r requirements.txt
       - run: pytest tests.py
       - uses: ./
+        id: version
         with:
           version: '1.2.3'
+      - run: echo ${{ steps.version.outputs.version }}
+

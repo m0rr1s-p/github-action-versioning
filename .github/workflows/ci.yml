@@ -1,0 +1,13 @@
+name: ci.yml
+on:
+  push: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: pytest tests.py
+      - uses: ./
+        with:
+          version: '1.2.3'

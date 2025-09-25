@@ -1,0 +1,24 @@
+name: 'Increment Version'
+author: 'morris'
+description: 'Increase version number'
+
+inputs:
+  version:
+    description: 'Version number'
+    required: true
+  max_increment:
+    description: 'Max increment'
+    required: false
+    default: "99"
+  increment_type:
+    description: 'Increment type'
+    required: false
+    default: "patch"
+
+outputs:
+  version:
+    description: 'New version number'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
